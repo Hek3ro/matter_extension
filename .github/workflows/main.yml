@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'python', 'javascript', 'go', 'cpp', 'java' ] # غيّر اللغات حسب المشروع
+        language: [ 'python' ] # غيّرها حسب لغة المشروع لو مش بايثون
 
     steps:
       - name: Checkout repository
@@ -32,4 +32,4 @@ jobs:
           languages: ${{ matrix.language }}
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-a
+        uses: github/codeql-action/analyze@v3
